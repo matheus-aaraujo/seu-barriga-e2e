@@ -2,10 +2,7 @@
 
 Cypress.Commands.add("cadastrarUsuario", (nome, email, senha) => {
     cy.window().then((win) => {
-        cy.log(win.location.href);
-        var dorme = win.location.href.search(/cadastro/g);
-        cy.log(dorme);
-        if(dorme != -1) {
+        if(win.location.href.search(/cadastro/g) != -1) {
             cy.get("#nome").type(nome);
             cy.get("#email").type(email);
             cy.get("#senha").type(senha);
