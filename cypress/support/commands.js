@@ -1,5 +1,3 @@
-
-
 Cypress.Commands.add("cadastrarUsuario", (nome, email, senha) => {
     cy.window().then((win) => {
         if(win.location.href.search(/cadastro/g) != -1) {
